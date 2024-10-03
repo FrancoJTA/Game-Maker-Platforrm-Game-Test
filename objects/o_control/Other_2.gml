@@ -1,0 +1,1 @@
+global.part_front = part_system_create_layer("part_front",0);

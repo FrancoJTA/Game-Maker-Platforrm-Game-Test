@@ -1,6 +1,11 @@
 // SPRITE CHECKS ---------------
 if(ground){
-	if(x_speed==0) sprite_index=s_idle;
+	if(x_speed==0){
+		if(!crouch)
+		sprite_index=s_idle;
+		else
+		sprite_index=s_crouch;
+	}
 	else sprite_index=s_walk;
 }
 else{
@@ -11,6 +16,6 @@ else{
 if(right) image_xscale=1;
 else image_xscale=-1;
 
-mask_index=s_player_mask;
+if(!crouch) mask_index=s_player_mask; else mask_index=s_player_crouch_mask;
 
 draw_self();
