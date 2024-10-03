@@ -1,4 +1,4 @@
-
+global.previous_room=0;
 
 global.p_hit = part_type_create();
 part_type_shape(global.p_hit,pt_shape_square);
