@@ -120,3 +120,7 @@ if(double_j_c==2 and db_part){
 	db_part=0;
 	part_particles_create(global.part_back,x,y,global.p_jump,50);
 }
+
+if(keyboard_check(vk_enter)){
+	c_hook();
+}

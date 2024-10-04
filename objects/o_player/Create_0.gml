@@ -34,4 +34,8 @@ double_j_c=0;
 
 db_part=0;
 
-lc=0;
+dir=0;
+dist=0;
+hook_n=0;
+hook_c=0;
+time_hook=1;
