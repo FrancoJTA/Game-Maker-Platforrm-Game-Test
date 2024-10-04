@@ -36,11 +36,12 @@ else
 // ----------- JUMP --------------
 if (keyboard_check_pressed(vk_space))
 {
-	if(ground or coyote_c)
+	if(ground or coyote_c or (double_j_c<2 and double_j))
 	{
-
 		ground = 0;
 		coyote_c = 0;
+		if(double_j)
+		double_j_c++;
 		if(crouch and place_free(x,y+1)) y+=1;
 		
 		else y_speed = -jump_power;
@@ -89,6 +90,9 @@ if (collision_rectangle(x-12,y,x+12,y+1,o_terrain,0,1) and !collision_rectangle(
 	ground=1;
 	y_speed=0;
 	coyote_c=1;
+	db_part=1;
+	if(double_j)double_j_c=0;	
+	
 }
 else{
 	crouch=0;
@@ -108,4 +112,11 @@ else{
 
 if(keyboard_check(vk_control)){
 	c_weapon_pistol(weapon);
+}
+
+// ------ DB JUMP -----
+
+if(double_j_c==2 and db_part){
+	db_part=0;
+	part_particles_create(global.part_back,x,y,global.p_jump,50);
 }
