@@ -1,3 +1,6 @@
+hpMax=60;
+hp = hpMax;
+invi_time=45;
 // ------------ Movimiento ------------
 x_speed = 0;
 x_speed_max = 7;
@@ -28,3 +31,6 @@ reload_speed=20;
 
 weapon_modx = 15;
 weapon_mody = -25;
+
+invi=0;
+dead=0;

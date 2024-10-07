@@ -1,3 +1,5 @@
+global.checkpoint=0;
+global.respawn=0;
 global.previous_room=0;
 
 global.p_hit = part_type_create();

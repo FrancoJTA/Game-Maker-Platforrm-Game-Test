@@ -1,5 +1,6 @@
 // ------------ STATS ----------
 hp=30;
+dmg=20;
 
 canShoot=1;
 shoot_delay=30;

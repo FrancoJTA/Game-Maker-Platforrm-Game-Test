@@ -1,3 +1,4 @@
+if(!dead){
 // ------- INPUT ------
 
 if (keyboard_check(vk_right))
@@ -84,6 +85,12 @@ if(y_speed != 0)
 }
 
 // ---------- CHECKS ---------
+if(hp<=0){
+	dead=1;
+	invi=1;
+	alarm[1]=-1;
+}
+
 
 if (collision_rectangle(x-12,y,x+12,y+1,o_terrain,0,1) and !collision_rectangle(x-12,y-10,x+12,y,o_terrain,0,1)){
 	ground=1;
@@ -108,4 +115,16 @@ else{
 
 if(keyboard_check(vk_control)){
 	c_weapon_pistol(weapon);
+}
+}
+else{
+	image_alpha-=0.0075;
+	if(image_alpha<=0){
+		global.respawn=1;
+		hp=hpMax;
+		dead=0;
+		invi=0;
+		room_goto(global.checkpoint);
+	}
+
 }
