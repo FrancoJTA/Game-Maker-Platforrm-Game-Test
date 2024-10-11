@@ -99,7 +99,7 @@ if (collision_rectangle(x-12,y,x+12,y+1,o_terrain,0,1) and !collision_rectangle(
 }
 else{
 	crouch=0;
-	// bug arreglado al agacharse
+
 	ground=0;
 	y_speed+=grav;
 	if(coyote_c and alarm[11]==-1) alarm[11]=coyote_t;
